@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: well-known/noredink-openid-configuration.json
+docs: https://www.noredink.com/.well-known/openid-configuration
+schemes:
+- name: OAuth2
+  source: well-known/noredink-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.noredink.com/oauth/authorize
+    tokenUrl: https://www.noredink.com/oauth/token
+scopes:
+- scope: openid
+  description: >-
+    OpenID Connect authentication scope. Requests an ID token asserting the
+    user's identity (iss, sub, aud, exp, iat, roles claims) via the userinfo
+    endpoint.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/noredink-openid-configuration.json
+notes: >-
+  NoRedInk's discovery document advertises a single OAuth 2.0 scope (`openid`).
+  Any additional partner/rostering scopes are not published in the public
+  discovery metadata.

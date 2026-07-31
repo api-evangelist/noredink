@@ -1,0 +1,68 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  well-known/noredink-openid-configuration.json,
+  well-known/noredink-oauth-authorization-server.json
+docs: https://www.noredink.com/.well-known/openid-configuration
+summary:
+  types:
+  - oauth2
+  - openIdConnect
+  oauth2_flows:
+  - authorizationCode
+  grant_types:
+  - authorization_code
+  - refresh_token
+  issuer: https://www.noredink.com
+schemes:
+- name: OpenIDConnect
+  type: openIdConnect
+  openIdConnectUrl: https://www.noredink.com/.well-known/openid-configuration
+  issuer: https://www.noredink.com
+  id_token_signing_alg_values_supported:
+  - RS256
+  subject_types_supported:
+  - public
+  claims_supported:
+  - iss
+  - sub
+  - aud
+  - exp
+  - iat
+  - roles
+  sources:
+  - well-known/noredink-openid-configuration.json
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.noredink.com/oauth/authorize
+    tokenUrl: https://www.noredink.com/oauth/token
+    refreshUrl: https://www.noredink.com/oauth/token
+    scopes:
+      openid: OpenID Connect authentication (sign-in / identity)
+  response_types_supported:
+  - code
+  response_modes_supported:
+  - query
+  - fragment
+  - form_post
+  token_endpoint_auth_methods_supported:
+  - client_secret_basic
+  - client_secret_post
+  endpoints:
+    authorization: https://www.noredink.com/oauth/authorize
+    token: https://www.noredink.com/oauth/token
+    revocation: https://www.noredink.com/oauth/revoke
+    introspection: https://www.noredink.com/oauth/introspect
+    userinfo: https://www.noredink.com/oauth/userinfo
+    jwks: https://www.noredink.com/oauth/discovery/keys
+  sources:
+  - well-known/noredink-oauth-authorization-server.json
+notes: >-
+  Derived from NoRedInk's published OpenID Connect discovery and RFC 8414
+  authorization-server metadata. NoRedInk operates a standards-based OAuth 2.0
+  authorization-code + refresh-token flow with OpenID Connect on top (RS256 id
+  tokens, userinfo, JWKS, token introspection and revocation). Only the `openid`
+  scope is advertised in discovery. This is an SSO / partner-integration surface
+  rather than an open public data API.

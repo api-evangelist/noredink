@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+probe: true
+url: https://trust.noredink.com
+platform: vanta
+certifications: []
+evidence:
+- source: https://trust.noredink.com
+  http_status: 200
+  title: NoRedInk Trust Center
+  keywords:
+  - trust center
+notes: >-
+  NoRedInk operates a Vanta-hosted Trust Center at https://trust.noredink.com
+  (verified HTTP 200, page title "NoRedInk Trust Center"). The specific
+  certifications and compliance documents are rendered client-side by Vanta and
+  were not extractable from the static HTML, so none are asserted here. No
+  `Compliance` pointer is emitted because no named certification could be
+  verified from public static content.

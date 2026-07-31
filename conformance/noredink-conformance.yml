@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: derived
+source: >-
+  well-known/noredink-openid-configuration.json,
+  well-known/noredink-oauth-authorization-server.json,
+  well-known/noredink-security.txt
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Published authorization-code + refresh-token flow with authorize/token/
+    revoke/introspect endpoints (RFC 6749).
+- id: oidc-discovery
+  conforms: true
+  evidence: >-
+    /.well-known/openid-configuration present with issuer, userinfo_endpoint,
+    jwks_uri and RS256 id_token signing (OpenID Connect Discovery 1.0).
+- id: rfc8414-oauth-as-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server present (RFC 8414).
+- id: rfc7009-token-revocation
+  conforms: true
+  evidence: revocation_endpoint published (RFC 7009).
+- id: rfc7662-token-introspection
+  conforms: true
+  evidence: introspection_endpoint published (RFC 7662).
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: /.well-known/security.txt present with Contact/Expires/Canonical.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No OpenAPI or documented error envelope found to confirm.

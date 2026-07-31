@@ -1,21 +1,75 @@
 aid: noredink
 name: NoRedInk
-description: NoRedInk is a company surfaced as a portfolio company of 500-global, gv and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  NoRedInk is a K-12 English Language Arts platform used by millions of students
+  and teachers to build stronger writers and critical thinkers. It combines
+  adaptive grammar and writing practice, personalized high-interest content,
+  authentic assessments, guided essays with self and peer review, actionable
+  teacher data, and an AI-powered Grading Assistant. NoRedInk's public developer
+  surface is a standards-based OAuth 2.0 / OpenID Connect authorization server
+  (issuer https://www.noredink.com) that powers single sign-on and classroom
+  rostering integrations with Clever, ClassLink, Canvas, and Google Classroom.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://noredink.com/wp-content/uploads/2025/09/GA-Essays-grayBG.gif
 url: https://raw.githubusercontent.com/api-evangelist/noredink/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
 - gv
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-oauth-oidc-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Education
+- EdTech
+- English Language Arts
+- Grammar
+- Writing
+- Literacy
+- K-12
+- OAuth
+- OpenID Connect
+- Single Sign-On
+- Rostering
+- Identity
+apis:
+- name: NoRedInk OAuth & OpenID Connect
+  description: >-
+    NoRedInk's OAuth 2.0 authorization server with OpenID Connect on top, used
+    for single sign-on and partner/classroom-rostering integrations. Advertises
+    the authorization-code + refresh-token grants, an `openid` scope, RS256 id
+    tokens, and userinfo/JWKS/introspection/revocation endpoints under /oauth/*.
+  humanURL: https://www.noredink.com/product/overview/
+  baseURL: https://www.noredink.com
+  tags:
+  - OAuth
+  - OpenID Connect
+  - Single Sign-On
+  - Identity
+  properties:
+  - type: OpenIDConnect
+    url: https://www.noredink.com/.well-known/openid-configuration
+  - type: Authentication
+    url: authentication/noredink-authentication.yml
+  - type: OAuthScopes
+    url: scopes/noredink-scopes.yml
+  - type: WellKnown
+    url: well-known/noredink-well-known.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +78,46 @@ maintainers:
 common:
 - type: Website
   url: https://noredink.com
+- type: Support
+  url: https://noredink.zendesk.com/hc/en-us
+- type: Blog
+  url: https://www.noredink.com/insights/blog/
+- type: GitHubOrganization
+  url: https://github.com/NoRedInk
+- type: SignUp
+  url: https://www.noredink.com/signup
+- type: Login
+  url: https://www.noredink.com/login
+- type: TermsOfService
+  url: https://www.noredink.com/terms/
+- type: PrivacyPolicy
+  url: https://www.noredink.com/privacy/
+- type: Authentication
+  url: authentication/noredink-authentication.yml
+- type: OAuthScopes
+  url: scopes/noredink-scopes.yml
+- type: WellKnown
+  url: well-known/noredink-well-known.yml
+- type: SecurityTxt
+  url: well-known/noredink-security.txt
+- type: Conformance
+  url: conformance/noredink-conformance.yml
+- type: Lifecycle
+  url: lifecycle/noredink-lifecycle.yml
+- type: StatusPage
+  url: https://noredinkstatus.com/
+- type: DomainSecurity
+  url: security/noredink-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/noredink-vulnerability-disclosure.yml
+- type: Security
+  url: security/noredink-vulnerability-disclosure.yml
+- type: TrustCenter
+  url: security/noredink-trust-center.yml
+- type: LLMsTxt
+  url: llms/noredink-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1

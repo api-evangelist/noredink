@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://noredinkstatus.com/ ; https://www.noredink.com/.well-known/openid-configuration
+versioning:
+  scheme: uri-path
+  notes: >-
+    OAuth/OIDC endpoints are unversioned under /oauth/*. No dated or header-based
+    API versioning policy is publicly documented.
+status_page: https://noredinkstatus.com/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation / Sunset (RFC 8594) policy was found.
+sla:
+  url: null
+deprecated_operations: []
+notes: >-
+  NoRedInk publishes an Atlassian Statuspage at https://noredinkstatus.com/
+  ("NoRedInk System Status Page"). No separate versioning or deprecation policy
+  page is published for the OAuth/OIDC integration surface.
