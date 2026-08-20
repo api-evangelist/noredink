@@ -42,6 +42,20 @@ tags:
 - Writing
 - Literacy
 - K-12
+- Authentication
+- OpenID Connect
+- Single Sign-On
+- Rostering
+- Identity
+tags_raw:
+- Company
+- Education
+- EdTech
+- English Language Arts
+- Grammar
+- Writing
+- Literacy
+- K-12
 - OAuth
 - OpenID Connect
 - Single Sign-On
@@ -57,6 +71,11 @@ apis:
   humanURL: https://www.noredink.com/product/overview/
   baseURL: https://www.noredink.com
   tags:
+  - Authentication
+  - OpenID Connect
+  - Single Sign-On
+  - Identity
+  tags_raw:
   - OAuth
   - OpenID Connect
   - Single Sign-On
