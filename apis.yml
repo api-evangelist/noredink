@@ -9,6 +9,17 @@ description: >-
   surface is a standards-based OAuth 2.0 / OpenID Connect authorization server
   (issuer https://www.noredink.com) that powers single sign-on and classroom
   rostering integrations with Clever, ClassLink, Canvas, and Google Classroom.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
