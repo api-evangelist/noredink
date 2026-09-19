@@ -55,7 +55,7 @@ tags:
 - K-12
 - Authentication
 - OpenID Connect
-- Single Sign-On
+- SSO
 - Rostering
 - Identity
 tags_raw:
@@ -84,7 +84,7 @@ apis:
   tags:
   - Authentication
   - OpenID Connect
-  - Single Sign-On
+  - SSO
   - Identity
   tags_raw:
   - OAuth
