@@ -2,24 +2,28 @@ generated: '2026-07-20'
 method: searched
 source: live fetch of https://www.noredink.com/.well-known/*
 host: https://www.noredink.com
-documents:
-- path: /.well-known/security.txt          # RFC 9116
-  status: 200
-  file: noredink-security.txt
-- path: /.well-known/openid-configuration   # OpenID Connect Discovery 1.0
-  status: 200
-  file: noredink-openid-configuration.json
-- path: /.well-known/oauth-authorization-server  # RFC 8414
-  status: 200
-  file: noredink-oauth-authorization-server.json
-- path: /.well-known/api-catalog            # RFC 9727
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
-notes: >-
-  NoRedInk publishes both an OpenID Connect discovery document and an RFC 8414
-  OAuth authorization-server metadata document (identical payloads). The issuer
-  is https://www.noredink.com with authorization, token, revocation,
-  introspection, userinfo and JWKS endpoints under /oauth/*. This is the
-  provider's third-party integration / SSO surface used for classroom rostering
-  partners (Clever, ClassLink, Canvas, Google Classroom).
+notes: NoRedInk publishes both an OpenID Connect discovery document and an RFC 8414 OAuth authorization-server
+  metadata document (identical payloads). The issuer is https://www.noredink.com with authorization, token,
+  revocation, introspection, userinfo and JWKS endpoints under /oauth/*. This is the provider's third-party
+  integration / SSO surface used for classroom rostering partners (Clever, ClassLink, Canvas, Google Classroom).
+hosts:
+- host: https://www.noredink.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: noredink-security.txt
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: noredink-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: noredink-oauth-authorization-server.json
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
