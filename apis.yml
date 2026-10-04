@@ -54,7 +54,6 @@ tags:
 - Literacy
 - K-12
 - Authentication
-- OpenID Connect
 - SSO
 - Rostering
 - Identity
@@ -68,7 +67,6 @@ tags_raw:
 - Literacy
 - K-12
 - OAuth
-- OpenID Connect
 - Single Sign-On
 - Rostering
 - Identity
@@ -80,7 +78,6 @@ apis:
     the authorization-code + refresh-token grants, an `openid` scope, RS256 id
     tokens, and userinfo/JWKS/introspection/revocation endpoints under /oauth/*.
   humanURL: https://www.noredink.com/product/overview/
-  baseURL: https://www.noredink.com
   tags:
   - Authentication
   - OpenID Connect
@@ -151,3 +148,5 @@ x-enrichment:
   status: enriched
   artifacts_added: 12
   pass: local-v1
+x-tags-removed:
+- OpenID Connect
